@@ -103,7 +103,7 @@ class Matricula extends BaseController
             if ($total['totalAlunos'] > 20) {
                 // Return data
                 session()->setFlashdata('error','total');
-                return redirect()->to(base_url('dashboard'));
+                return view('matriculas/matricula', $this->data);
             } else {
                 // // read and save pdf files
                 $nomeArquivo = $data['documentos_digitalizados']->getRandomName(); 
