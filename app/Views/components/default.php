@@ -11,6 +11,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="<?php echo base_url('favicon.ico') ;?>">
     <title>Sankofa</title>
     <style>
         .print { width: 40% !important ; height: 25% !important ; }
