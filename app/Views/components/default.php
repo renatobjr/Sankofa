@@ -63,6 +63,9 @@
         M.toast({html: '<?php echo session()->getFlashdata('error_user') ?>' ,displayLength: 4000,classes:'red darken-4'});
     <?php endif; ?>
     $(document).ready(function () {
+        // Sidenav
+        $('.sidenav').sidenav()
+        
         // Init selectforms
         $('select').formSelect();
 
