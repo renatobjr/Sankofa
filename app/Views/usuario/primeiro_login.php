@@ -25,7 +25,7 @@
 
 			<!-- btn submit -->
 			<div class="row center">
-				<button type="submit" class="btn waves-light waves-effect green">Registar</button>
+				<button type="submit" class="btn waves-light waves-effect green">Registrar</button>
 			</div>
 			<!-- form close -->
 			<?php echo form_close() ;?>
