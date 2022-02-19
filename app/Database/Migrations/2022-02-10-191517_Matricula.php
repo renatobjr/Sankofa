@@ -162,7 +162,7 @@ class Matricula extends Migration
                 'type'              => 'VARCHAR',
                 'constraint'        => '120'
             ],
-            'violacao_direitos' => [
+            'grau_parentesco' => [
                 'type'              => 'VARCHAR',
                 'constraint'        => '120'
             ],

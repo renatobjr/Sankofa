@@ -22,6 +22,17 @@
     <div class="row">
         <div class="col s12 m12 l12 input-field">
             <i class="material-icons prefix">people</i>
+            <label for="grau_parentesco">Está passando por violação de direitos?</label>
+            <input 
+                type="text" 
+                name="grau_parentesco" 
+                id="grau_parentesco"
+                value="<?php echo isset($aluno) ? $aluno['grau_parentesco'] : set_value('grau_parentesco'); ?>">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m12 l12 input-field">
+            <i class="material-icons prefix">people</i>
             <label for="nome_mae">Nome da Mãe</label>
             <input 
                 type="text" 

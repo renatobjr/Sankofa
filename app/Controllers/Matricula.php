@@ -30,6 +30,7 @@ class Matricula extends BaseController
             'ano_escolar'               => 'required',
             // form_dados_responsavel
             'nome_responsavel'          => 'required',
+            'grau_parentesco'          => 'required',
             'nome_mae'                  => 'required',
             'nis'                       => 'required',
             'cpf_responsavel'           => 'required',
@@ -92,7 +93,7 @@ class Matricula extends BaseController
                 'beneficio_familia'                     => $this->request->getPost('beneficio_familia'),
                 'descricao_beneficios'                  => $this->request->getPost('descricao_beneficios'),
                 'renda_total'                           => $this->request->getPost('renda_total'),
-                'violacao_direitos'                     => $this->request->getPost('violacao_direitos'),
+                'grau_parentesco'                       => $this->request->getPost('grau_parentesco'),
                 'turma'                                 => $this->request->getPost('turma'),
             ];
             

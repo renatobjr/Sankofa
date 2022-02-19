@@ -82,15 +82,4 @@
             <span class="helper-text invalid" data-error="<?php echo $err ;?>"></span>
         </div>
     </div>
-    <div class="row">
-        <div class="col s12 m12 l12 input-field">
-            <i class="material-icons prefix">favorite</i>
-            <label for="violacao_direitos">Está passando por violação de direitos?</label>
-            <input 
-                type="text" 
-                name="violacao_direitos" 
-                id="violacao_direitos"
-                value="<?php echo isset($aluno) ? $aluno['violacao_direitos'] : set_value('violacao_direitos'); ?>">
-        </div>
-    </div>
 </div>

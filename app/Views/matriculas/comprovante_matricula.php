@@ -99,8 +99,9 @@
                         <td colspan="5"><strong>Dados do Responsável</strong></td>
                     </tr>
                     <tr>
-                        <td colspan="2">Nome da Mãe: <?php echo $aluno['nome_mae'] ;?></td>
-                        <td colspan="3">Nome do Responsável: <?php echo $aluno['nome_responsavel'] ;?></td>
+                        <td colspan="1">Nome da Mãe: <?php echo $aluno['nome_mae'] ;?></td>
+                        <td colspan="1">Nome do Responsável: <?php echo $aluno['nome_responsavel'] ;?></td>
+                        <td colspan="5">Grau de Parentesco <?php echo $aluno['grau_parentesco'] ;?></td>                    
                     </tr>
                     <tr>
                         <td colspan="1">NIS: <?php echo $aluno['nis'] ;?></td>
@@ -128,9 +129,6 @@
                         <td colspan="1">A família possuí benefícios? <?php echo $aluno['beneficio_familia']['descricao'] ;?></td>
                         <td colspan="1">Quais? <?php echo $aluno['descricao_beneficios'] ;?></td>
                         <td colspan="3">Renda Total da Família: R$ <?php echo $aluno['renda_total'] ;?></td>
-                    </tr>
-                    <tr>
-                        <td colspan="5">Está passando por alguma violação de direitos? <?php echo $aluno['violacao_direitos'] ;?></td>
                     </tr>
                 </table>
             </div>
@@ -166,6 +164,56 @@
                     A criança e/ou adolescente fará parte da <?php echo $aluno['turma']['descricao'] ;?>. 
                     Entre os meses de março e dezembro assistirá às oficinas de Português, Matemática, Ciências, Iniciação Teatral, Geo-história,
                     Práticas Terapêuticas e Gestão de Conflitos e Cultura Digital. 
+                </p>
+                <p class="center-align">
+                    <hr style="width: 50%; margin-top:100px">
+                </p>
+                <p class="center-align">
+                    Assinatura do(a) Responsável
+                </p>
+                <p class="center-align">
+                    Pedras de Fogo <?php echo $date;?>.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <hr>
+        </div>
+        <div class="row noprint">
+            <div class="col s12 m12 l12">
+                <object data="<?php echo base_url('docs/' . $aluno['documentos_digitalizados']) ;?>" type="application/pdf" style="height:800px;width:100% "></object>
+            </div>
+        </div>
+        <hr>
+        <div class="row center">
+            <div class="col s12 m12 l12">
+                <img class="responsive-img" src="<?php echo base_url('svg/logo.svg') ;?>" alt="" width="300px">
+                <h6 class="center-align">
+                    Organiação das Nações Unidas para a Educação, a Ciência e a Cultura - UNESCO <br>
+                    Rede Globo de Televisão - Criança Esparança 2022 <br>
+                    Casa de Cultura Ilê Asé D'Osoguiã - CCIAO <br>
+                    Griot Assessoria Educacional <br>
+                    Governo de Pedras de Fogo <br>
+                    Intituto Federal de Educação - IFPB - Campus Pedras de Fogo
+                </h6>
+                <h6 class="center-align">
+                    <strong>PROJETO SANKOFA - Olhar para o Passado para construir o Futuro</strong>
+                </h6>
+                <h6 class="center-align">
+                    <strong>Autorização de Uso de Imagem e Vídeo</strong>
+                </h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <p>
+                    Eu <?php echo $aluno['nome_responsavel'] ;?>, inscrito no CPF <?php echo $aluno['cpf_responsavel'] ;?> 
+                    residente e domiciliado à <?php echo $aluno['endereco'] ;?>, <?php echo $aluno['numero'] ;?>, <?php echo $aluno['bairro'] ;?>, <?php echo $aluno['cep'] ;?>, Pedras de Fogo
+                    AUTORIZO o uso das imagem do menor <?php echo $aluno['nome_beneficiario']  ;?> nascido em <?php echo date('d/m/Y',strtotime($aluno['data_nascimento'])) ;?> em
+                    materiais produzidos pela Casa de Cultura Ilê Asé D'Osoguiã e o Governo de Pedras de Fogo no âmbito do Projeto Sankofa.
+                    A presente autorização é concedida a título gratuito, abrangendo o uso da imagem acima mencionada em todo território nacional e 
+                    no exterior, em todas as suas modalidades e, em destaque, das seguintes formas: (I) home page; (II) cartazes; (III) divulgação em geral. Por esta 
+                    ser a expressão da minha vontade declaro que autorizo o uso acima descrito sem que nada haja a ser reclamado a título de direitos conexos à minha imagem ou a qualquer outro.
                 </p>
                 <p class="center-align">
                     <hr style="width: 50%; margin-top:100px">

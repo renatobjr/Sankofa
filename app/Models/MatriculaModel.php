@@ -50,7 +50,7 @@ class MatriculaModel extends Model
         'beneficio_familia',
         'descricao_beneficios',
         'renda_total',
-        'violacao_direitos',
+        'grau_parentesco',
         'turma'
     ];
 
