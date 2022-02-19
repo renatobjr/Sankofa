@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col s12 m12 l12 input-field">
             <i class="material-icons prefix">people</i>
-            <label for="grau_parentesco">Está passando por violação de direitos?</label>
+            <label for="grau_parentesco">Grau de Parentesco</label>
             <input 
                 type="text" 
                 name="grau_parentesco" 
