@@ -21,7 +21,7 @@
 <div class="row center">
     <div class="col s12 m12 l12 input-field">
         <i class="material-icons prefix">lock</i>
-        <label for="passwd">Senha</label>
+        <label for="password">Senha</label>
         <input 
             type="password" 
             name="password" 
