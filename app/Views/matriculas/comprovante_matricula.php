@@ -179,7 +179,6 @@
         <div class="row">
             <hr>
         </div>
-        <hr>
         <div class="row center">
             <div class="col s12 m12 l12">
                 <img class="responsive-img" src="<?php echo base_url('svg/logo.svg') ;?>" alt="" width="300px">
