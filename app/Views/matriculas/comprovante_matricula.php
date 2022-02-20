@@ -220,9 +220,6 @@
                 </p>
             </div>
         </div>
-        <div class="row">
-            <hr>
-        </div>
         <div class="row noprint">
             <div class="col s12 m12 l12">
                 <object data="<?php echo base_url('docs/' . $aluno['documentos_digitalizados']) ;?>" type="application/pdf" style="height:800px;width:100% "></object>
