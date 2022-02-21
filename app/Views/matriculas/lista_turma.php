@@ -60,6 +60,7 @@
                             <td><?php echo $aluno['nome_mae'] ;?></td>
                             <td><?php echo $aluno['nome_responsavel'] ;?></td>
                             <td><?php echo $aluno['telefone_contato'] ;?></td>
+                            <td><a target="_blank" href="<?php echo base_url('/dashboard/matricula/comprovante_matricula/' . $aluno['id']) ;?>"><i class="material-icons">print</i></a></td>
                         </tr>
                         <?php endforeach ?>
                     </tbody>
