@@ -134,7 +134,7 @@ class MatriculaModel extends Model
     public function getMatriculasTurma($turma)
     {
         echo $turma;
-        $matricula = $this->select('nome_beneficiario,nome_mae,nome_responsavel,telefone_contato')
+        $matricula = $this->select('id,nome_beneficiario,nome_mae,nome_responsavel,telefone_contato')
                           ->where(['turma' => $turma])
                           ->get()
                           ->getResultArray();
