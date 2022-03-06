@@ -4,14 +4,18 @@ namespace App\Controllers;
 
 use App\Models\MatriculaModel;
 use App\Models\TabelasAuxiliares;
+use App\Models\CadastroReservaModel;
 
 class Matricula extends BaseController
 {
-    
-
     public function matricula()
     {
         return view('matriculas/matricula', $this->data);
+    }
+
+    public function cadastro_reserva()
+    {
+        return view('matriculas/cadastro_reserva', $this->data);
     }
 
     public function salvar()
@@ -95,15 +99,17 @@ class Matricula extends BaseController
                 'renda_total'                           => $this->request->getPost('renda_total'),
                 'grau_parentesco'                       => $this->request->getPost('grau_parentesco'),
                 'turma'                                 => $this->request->getPost('turma'),
+                'observacoes'                           => $this->request->getPost('observacoes'),
+                'criado_por'                            => $_SESSION['id']
             ];
             
             // Counting matriculas
             $turmas = new TabelasAuxiliares();
             $total = $turmas->countMatriculas($data['turma']);
-            // Verifing...
-            if ($total['totalAlunos'] > 20) {
+            // Verifing
+            if ($total['totalAlunos'] >= 20) {
                 // Return data
-                session()->setFlashdata('error','total');
+                session()->setFlashdata('modal_error','total');
                 return view('matriculas/matricula', $this->data);
             } else {
                 // // read and save pdf files
@@ -111,16 +117,16 @@ class Matricula extends BaseController
                 $data['documentos_digitalizados']->move('../public/docs', $nomeArquivo);
                 $data['documentos_digitalizados'] = $nomeArquivo;
 
-                // Increment...
-                $total = ++$total['totalAlunos'];
-                $turmas->addTotalAlunos($data['turma'],$total);
-
                 // Save data
                 $matricula->save($data);
                 $id_matricula = $matricula->getInsertID();
+
+                // Increment...
+                $total = $matricula->countMatriculas($data['turma']);
+                $turmas->addTotalAlunos($data['turma'],$total);
                     
                 // Return data
-                session()->setFlashdata('success',$id_matricula);
+                session()->setFlashdata('modal_success',$id_matricula);
                 return redirect()->to(base_url('dashboard'));
             }
             
@@ -132,6 +138,33 @@ class Matricula extends BaseController
                 ]
             );
         } 
+    }
+
+    public function reservar() {
+        if ($this->request->getPost()
+            && $this->validate([
+              'nome_beneficiario' => 'required',  
+              'telefone_contato' => 'required',  
+              'observacoes' => 'required',  
+            ])
+        ) {
+            $reserva = new CadastroReservaModel();
+            $data = [
+                'nome_beneficiario' => $this->request->getPost('nome_beneficiario'),  
+                'telefone_contato' => $this->request->getPost('telefone_contato'),  
+                'observacoes' => $this->request->getPost('observacoes'),
+            ];
+            $reserva->save($data);
+            session()->setFlashdata('success','Reserva realizada com sucesso');            
+            return redirect()->to(base_url('dashboard'));            
+        } else {
+            return view('/matriculas/cadastro_reserva',
+                $this->data,
+                [
+                    'validation' => $this->validator
+                ]
+            );
+        }
     }
 
     public function comprovante_matricula($id)

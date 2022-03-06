@@ -10,6 +10,7 @@
             </a>
             <a href="#" data-target="mobile-app" class="sidenav-trigger"><i class="material-icons black-text">menu</i></a>
             <ul id="right" class="right hide-on-med-and-down">
+                <li><a class=" black-text" href="<?php echo base_url('/dashboard/cadastro-reserva') ;?>">Cadastro Reserva</a></li>
                 <li><a class=" black-text" href="<?php echo base_url('/dashboard/matricula') ;?>">Nova Matrícula</a></li>
                 <?php if ($_SESSION['isAdmin'] == 0) : ?>
                     <li><a class=" black-text" href="<?php echo base_url('/dashboard/novo-usuario') ;?>">Novo Usuário</a></li>
@@ -21,6 +22,7 @@
 </div>
 <!-- navbar mobile -->
 <ul class="sidenav" id="mobile-app">
+    <li><a class=" black-text" href="<?php echo base_url('/dashboard/cadastro-reserva') ;?>">Cadastro Reserva</a></li>
     <li><a class=" black-text" href="<?php echo base_url('/dashboard/matricula') ;?>">Nova Matrícula</a></li>
     <?php if ($_SESSION['isAdmin'] == 0) : ?>
         <li><a class=" black-text" href="<?php echo base_url('/dashboard/novo-usuario') ;?>">Novo Usuário</a></li>

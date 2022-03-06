@@ -82,4 +82,17 @@
             <span class="helper-text invalid" data-error="<?php echo $err ;?>"></span>
         </div>
     </div>
+    <div class="row">
+        <div class="col s12 m12 l12 input-field">
+            <i class="material-icons prefix">assignment_late</i>
+            <label for="observacoes">Observações - Dociumentos Faltantes</label>
+            <input 
+                type="text" 
+                name="observacoes" 
+                id="observacoes" 
+                class="validate <?php echo $validation->getError('observacoes') ? 'invalid' : '' ;?>"
+                value="<?php echo isset($aluno) ? $aluno['observacoes'] : set_value('observacoes'); ?>">
+            <span class="helper-text invalid" data-error="<?php echo $err ;?>"></span>
+        </div>
+    </div>
 </div>

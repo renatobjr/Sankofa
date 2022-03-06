@@ -51,7 +51,9 @@ class MatriculaModel extends Model
         'descricao_beneficios',
         'renda_total',
         'grau_parentesco',
-        'turma'
+        'turma',
+        'observacoes',
+        'criado_por'
     ];
 
     public function getMatricula($id)
@@ -133,11 +135,16 @@ class MatriculaModel extends Model
 
     public function getMatriculasTurma($turma)
     {
-        echo $turma;
         $matricula = $this->select('id,nome_beneficiario,nome_mae,nome_responsavel,telefone_contato')
                           ->where(['turma' => $turma])
                           ->get()
                           ->getResultArray();
         return $matricula;
     }
+
+    public function countMatriculas($turma) {
+        $query = $this->where('turma',$turma)
+                      ->countAllResults();
+        return $query;
+    } 
 }

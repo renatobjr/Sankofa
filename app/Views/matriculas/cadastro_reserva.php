@@ -4,8 +4,6 @@
 <!-- navbar -->
 <?php echo $this->include('components/navbar') ;?>
 <!-- Modal turma excedida -->
-<?php echo $this->include('components/modal_turma_excedida') ;?>
-<!-- Form and Validation service -->
 <?php 
   helper('form');  
 ?>
@@ -14,23 +12,15 @@
         <div class="col s12 m12 l8 offset-l2">
             <div class="card white">
                 <div class="card-content black-text">
-                    <span class="card-title light">Matrícula de Alunos
+                    <span class="card-title light">Cadastro Reserva
                     <i class="material-icons small right">account_circle</i></span>
                 </div>
                 <!-- Form open -->
-                <?php echo form_open_multipart('/dashboard/matricula/salvar') ;?>
+                <?php echo form_open('/dashboard/cadastro-reserva/reservar') ;?>
                 <?php echo csrf_field() ;?>
 
-                <!-- Dados do Beneficiário -->
-                <?php echo $this->include('forms/form_beneficiario') ;?>
-                <!-- Categoria do Público -->
-                <?php echo $this->include('forms/form_categoria_publico') ;?>
-                <!-- Dados do responsasável -->
-                <?php echo $this->include('forms/form_dados_responsavel') ;?>
-                <!-- Dados socioeconomicos -->
-                <?php echo $this->include('forms/form_socio_economicos') ;?>
-                <!-- Documentos -->
-                <?php echo $this->include('forms/form_documentos') ;?>
+                <!-- Cadastro Reserva -->
+                <?php echo $this->include('forms/form_cadastro_reserva') ;?>
                 <!-- Btn submit -->
                 <div class="card-action">
                     <div class="center">

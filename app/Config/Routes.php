@@ -34,11 +34,13 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/dashboard', 'Home::dashboard', ['filter' => 'authGuard']);
 // Matriculas
+$routes->get('/dashboard/cadastro-reserva', 'Matricula::cadastro_reserva', ['filter' => 'authGuard']);
 $routes->get('/dashboard/matricula', 'Matricula::matricula', ['filter' => 'authGuard']);
 $routes->get('/dashboard/matricula/comprovante_matricula/(:any)','Matricula::comprovante_matricula/$1', ['filter' => 'authGuard']);
 $routes->get('/dashboard/lista-turma/(:any)/(:any)', 'Matricula::lista_turma/$1/$2', ['filter' => 'authGuard']);
 $routes->match(['get','post'],'/dashboard/matricula/salvar','Matricula::salvar', ['filter' => 'authGuard']);
-// Usuarios
+$routes->match(['get','post'],'/dashboard/cadastro-reserva/reservar','Matricula::reservar', ['filter' => 'authGuard']);
+// Usuariosd
 $routes->get('/primeiro-login', 'Usuario::primeiro_login');
 $routes->get('/dashboard/novo-usuario', 'Usuario::novoUsuario', ['filter' => 'authGuard']);
 $routes->get('/dashboard/logout', 'Usuario::logout', ['filter' => 'authGuard']);

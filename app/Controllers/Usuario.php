@@ -41,7 +41,7 @@ class Usuario extends BaseController
                 ];
                 $usuario->save($data);
                 // return
-                session()->setFlashdata('success_user','Usuario cadastrado com sucesso');
+                session()->setFlashdata('success','Usuario cadastrado com sucesso');
                 return redirect()->to(base_url('dashboard'));
             }
         } else {
@@ -76,7 +76,7 @@ class Usuario extends BaseController
                         ->where('id', $isUnique['id'])
                         ->update();
                 // return
-                session()->setFlashdata('success_user','Utilize suas crendeciais para realizar o Login.');
+                session()->setFlashdata('success','Utilize suas crendeciais para realizar o Login.');
                 return redirect()->to(base_url());
             }
         } else {
@@ -111,7 +111,7 @@ class Usuario extends BaseController
                     ];
 
                     $session->set($session_user);
-                    session()->setFlashdata('success_user','Seja bem vindo ' . $session_user['nome_completo']);
+                    session()->setFlashdata('success','Seja bem vindo ' . $session_user['nome_completo']);
                     return redirect()->to('dashboard');
                 } else {
                     $err = 'Verifique sua senha.';

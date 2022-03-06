@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\CadastroReservaModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
@@ -46,7 +47,8 @@ class BaseController extends Controller
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 
-        // get content for auxiliar tables
+        // get content for auxiliar tables and reservas
+        $reservas = new CadastroReservaModel();
         $tabelaAuxiliar = new TabelasAuxiliares();
         // Booleana select
         $this->data['selectBooleana'] = $tabelaAuxiliar->getBooleana();
@@ -64,6 +66,8 @@ class BaseController extends Controller
         $this->data['selectTipoMoradia'] = $tabelaAuxiliar->getTipoMoradia();
         // Turmas select
         $this->data['selectTurmas'] = $tabelaAuxiliar->getTurma();
+        // Reservas
+        $this->data['cadastroReserva'] = $reservas->getReservas();
 
         $this->session = \Config\Services::session();
     }

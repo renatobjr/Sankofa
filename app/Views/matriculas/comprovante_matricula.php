@@ -130,6 +130,9 @@
                         <td colspan="1">Quais? <?php echo $aluno['descricao_beneficios'] ;?></td>
                         <td colspan="3">Renda Total da Família: R$ <?php echo $aluno['renda_total'] ;?></td>
                     </tr>
+                    <tr>
+                        <td colspan=5>Observações: <?php echo $aluno['observacoes'] ;?></td>
+                    </tr>
                 </table>
             </div>
         </div>

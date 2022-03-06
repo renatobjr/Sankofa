@@ -57,8 +57,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 <script>
     M.AutoInit();
-    <?php if(session()->getFlashdata('success_user')) : ?>
-        M.toast({html: '<?php echo session()->getFlashdata('success_user') ?>' ,displayLength: 4000,classes:'green darken-4'});
+    <?php if(session()->getFlashdata('success')) : ?>
+        M.toast({html: '<?php echo session()->getFlashdata('success') ?>' ,displayLength: 4000,classes:'green darken-4'});
     <?php elseif (session()->getFlashdata('error_user')) : ?>
         M.toast({html: '<?php echo session()->getFlashdata('error_user') ?>' ,displayLength: 4000,classes:'red darken-4'});
     <?php endif; ?>
@@ -70,14 +70,14 @@
         $('select').formSelect();
 
         // Modal print
-        <?php if (session()->getFlashdata('success')) : ?>
+        <?php if (session()->getFlashdata('modal_success')) : ?>
             $('#print_matricula').modal({
                 dismissible:false
             })
             $('#print_matricula').modal('open')
         <?php endif ?>
         // Modal turma
-        <?php if (session()->getFlashdata('error')) : ?>
+        <?php if (session()->getFlashdata('modal_error')) : ?>
             $('#turma_excedida').modal({
                 dismissible:false
             })
